@@ -4,7 +4,7 @@
 
 Capture baseline revision, active document identity, original dimensions, mode/depth/profile, and a source fingerprint. A filename alone is not a revision identity. Keep a checkpoint. Decide whether to preserve the last accepted grade or the undeveloped original; use the user's established baseline.
 
-Define the allowed area before editing. The generator crop contains enough context for perspective, lighting, occlusion and material; it may be much larger than the allowed area. The final mask reveals only the object, its necessary shadows/reflections, or the surface being replaced. For a new shape, an old object's silhouette may be too narrow. Do not expand permission after seeing a pixel difference just to make verification pass.
+Define the allowed area before editing. The generator crop contains enough context for perspective, lighting, occlusion and material; it may be much larger than the allowed area. For insertion, the final mask reveals the new object and its necessary shadows/reflections. For removal/replacement, follow [object-removal.md](object-removal.md): reveal restored surfaces over the old object and all attributable visible effects, including disconnected shadows/reflections. For a new shape, an old object's silhouette may be too narrow. Do not expand permission after seeing a pixel difference just to make verification pass.
 
 Export the full composite losslessly, then extract its native-pixel crop. Use a PhotoCraft duplicate with merged layers and `image.crop`, or the optional helper's `crop` command. Never use an app-window screenshot as the image source: it includes viewport scale and UI. Scratch crops must not replace the live target.
 

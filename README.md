@@ -6,7 +6,7 @@ An independent Agent Skill for localized AI image edits and canvas expansion in 
 
 ## What it covers
 
-- Generative fill: add, replace or remove an object without regenerating the entire original.
+- Generative fill: add, replace or remove an object without regenerating the entire original. Removal covers its attributable shadows/reflections and composites the complete repair area.
 - Large-crop detail refinement instead of enlarging a low-resolution full-frame generation.
 - Generative expand: preserve original pixels at native scale while adding new borders.
 - Editable generated layers, selective masks, occlusion, contact shadows and reflections.

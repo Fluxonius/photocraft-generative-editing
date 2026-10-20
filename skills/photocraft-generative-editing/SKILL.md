@@ -21,10 +21,10 @@ Work from a checkpoint or duplicate, keeping original layers. Export a native-re
 ## Choose the route
 
 - Live PhotoCraft or transport errors: read [photocraft-bridge.md](references/photocraft-bridge.md).
-- Fill, remove, insert, or refine local details: read [local-fill.md](references/local-fill.md).
+- Fill, remove, insert, or refine local details: read [local-fill.md](references/local-fill.md). For removal/replacement, also read [object-removal.md](references/object-removal.md): remove the object and its attributable shadows/reflections, and composite the complete restored area rather than only its silhouette.
 - Expand a canvas: read [expand.md](references/expand.md).
 - Before generation: read the relevant provider section in [generators.md](references/generators.md).
-- Before accepting any insert: read [blend-quality.md](references/blend-quality.md).
+- Before accepting any generated edit: read [blend-quality.md](references/blend-quality.md).
 
 ## Preserve geometry and editability
 

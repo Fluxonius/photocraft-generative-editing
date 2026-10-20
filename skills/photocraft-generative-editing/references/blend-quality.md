@@ -1,6 +1,6 @@
-# Make an insert belong to the photograph
+# Make a generated edit belong to the photograph
 
-Use this review after every generated insert and again after corrections. A geometric fit and a zero-difference audit do not establish visual quality. Compare comparable materials at similar depth and illumination, not the mean brightness of the entire crop. A naturally black object should remain black against bright skin.
+Use this review after every generated insertion, removal or replacement and again after corrections. A geometric fit and a zero-difference audit do not establish visual quality. Compare comparable materials at similar depth and illumination, not the mean brightness of the entire crop. A naturally black object should remain black against bright skin.
 
 | Check | Evidence of mismatch | Local remedy |
 |---|---|---|
@@ -19,14 +19,14 @@ Use this review after every generated insert and again after corrections. A geom
 
 The **allowed mask** is a predeclared permission envelope, white wherever a change is authorized, including agreed edge transition and shadows. The **compositing mask** is the actual opacity shape of the insert. Its nonzero support must fit inside the envelope. Do not derive permission by thresholding the final difference or broadening it to include accidental leaks.
 
-Use a selection/path or a dedicated mask per meaningful part. An inserted pair of glasses normally needs frame + lenses + tiny contact shadows, not an entire rectangle of regenerated skin. Retain original hair above the temple and the original face wherever generation adds nothing required. A removal/fill, by contrast, must reveal replacement background over the removed silhouette and surrounding fringe.
+Use a selection/path or a dedicated mask per meaningful part. An inserted pair of glasses normally needs frame + lenses + tiny contact shadows, not an entire rectangle of regenerated skin. Retain original hair above the temple and the original face wherever generation adds nothing required. A removal/fill must reveal restored background across the old object and its attributable contact/cast shadows, reflections and residual fringe, including disconnected regions. Follow [object-removal.md](object-removal.md); an object-segmentation mask alone is insufficient. Preserve unrelated shadows and reflections.
 
 A mask can preserve identity better than another generator prompt. Inspect the mask alone and in overlay; look for disconnected holes, residual edges and shadow truncation. Changing mask density lets the original ghost through and is not a substitute for matching appearance.
 
 ## Acceptance sequence
 
 1. Geometry and physical fit; correct or regenerate displaced structures.
-2. Mask/occlusion and necessary shadow/reflection support.
+2. Mask/occlusion and necessary shadow/reflection support. For removals, compare the aligned generated crop with the final composite: verify that no old object-related shadow, reflection or fragment survived because the compositing mask omitted it.
 3. Color/profile and local tone, then optics and texture at final placement scale.
 4. Whole-frame inspection, layer toggling and 100–200% edge inspection.
 5. Pixel audit and native save. If natural blending needs editing protected pixels, revise the allowed area with the user or regenerate; do not silently soften the invariant.
