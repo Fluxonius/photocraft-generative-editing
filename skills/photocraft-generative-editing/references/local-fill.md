@@ -28,4 +28,6 @@ Run the blending review. Apply color, luminance or texture corrections only to t
 
 ## Verify
 
+Apply [quality-and-variants.md](quality-and-variants.md) to generated candidates and actual composites; retain requested alternatives independently.
+
 Toggle the new layer/group against the baseline. Examine edges at 100–200% and the whole image at viewing size. Export the composite, audit outside the allowed region, save the editable project and keep the accepted patch. Leave the final document active. Remove only scratch documents that the agent created and whose state is known; never close unrelated user work.

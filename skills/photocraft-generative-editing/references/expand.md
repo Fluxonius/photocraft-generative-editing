@@ -20,4 +20,6 @@ Inside strict preservation mode, a seam feather into the original is forbidden. 
 
 ## Accept
 
+Apply the candidate/composite gates in [quality-and-variants.md](quality-and-variants.md); compare requested alternatives with identical canvas geometry and protected original rectangle.
+
 Run the blending review on borders and corners. Check geometry and seamlessness at viewing size and at native scale. Export a comparable lossless composite and compare the translated original rectangle byte-for-byte at the decoded sample level. Use helper `outpaint` for supported 8-bit data. Check actual target dimensions and masks, save `.pcraft` and the requested export, and report any rounding or newly generated regions.

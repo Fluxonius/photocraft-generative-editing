@@ -12,6 +12,8 @@ Example prompt (fill/refine):
 
 > Edit this crop only by adding [object] on [identified subject]. Preserve framing, subject identity, pose and all existing structures. Match [observed light], [working monochrome/color appearance], [focus] and [grain]. Keep [landmarks] fixed; add only physically necessary shadows/reflections. Return this same composition with enough detail for the object's final native-pixel size. Do not retouch surrounding skin or hair.
 
+For output screening, optional variant counts, similar-reference refinement and retry limits, follow [quality-and-variants.md](quality-and-variants.md). Inspect every actual returned candidate; a successful generation call does not mean the fill passed review.
+
 ## Other providers and agents
 
 The SKILL.md workflow is provider-neutral. Adapt to real available image-edit/inpaint/outpaint capabilities. Confirm reference-image input, mask semantics (white may mean edit OR preserve), supported modes/profiles/alpha, maximum output size and whether resizing/padding/reframing occurs. Follow that host's tooling and permissions. Lack of a generator is a prerequisite to resolve, not grounds to silently choose a new paid service.

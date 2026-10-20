@@ -11,6 +11,7 @@ An independent Agent Skill for localized AI image edits and canvas expansion in 
 - Generative expand: preserve original pixels at native scale while adding new borders.
 - Editable generated layers, selective masks, occlusion, contact shadows and reflections.
 - Patch-local matching of color, tone, lighting, focus, grain and retouch level.
+- Candidate screening and final-composite quality gates, optional A/B/C choices on editable layers, and bounded repair/generation loops.
 - Exact protected-pixel auditing, separate from visual-quality review.
 - Live/headless PhotoCraft differences, capability discovery and recovery after uncertain tool outcomes.
 
