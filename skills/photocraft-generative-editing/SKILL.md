@@ -1,0 +1,36 @@
+---
+name: photocraft-generative-editing
+description: Use when adding, replacing or removing image content with AI in PhotoCraft, refining a generated local patch, or extending a canvas with generative fill, inpainting or outpainting while preserving original detail and editable layers.
+---
+# PhotoCraft generative editing
+
+Combine an available image generator with PhotoCraft's existing automation connection. Preserve the user's target document, requested live workflow and protected original pixels. This skill supplies a workflow, not a generator, MCP server or Photoshop feature implementation.
+
+## Establish the edit contract
+
+Inspect the document, dimensions, mode/depth/profile, layer and mask targets, selection, history and jobs. Identify the subject and requested change. Record the baseline and distinguish **allowed edit region**, **generator context crop**, and **actual compositing mask**. Include agreed feather/shadow support in the allowed region before generating. Resolve consequential ambiguity; otherwise state sensible choices and proceed under existing authorization.
+
+Work from a checkpoint or duplicate, keeping original layers. Export a native-resolution lossless baseline. Never substitute a lower-resolution full-frame generation for the original. Treat missing provider access or a missing supported bridge capability as a concrete prerequisite; do not install, expose credentials, change providers or spend on an external API silently.
+
+## Choose the route
+
+- Live PhotoCraft or transport errors: read [photocraft-bridge.md](references/photocraft-bridge.md).
+- Fill, remove, insert, or refine local details: read [local-fill.md](references/local-fill.md).
+- Expand a canvas: read [expand.md](references/expand.md).
+- Before generation: read the relevant provider section in [generators.md](references/generators.md).
+- Before accepting any insert: read [blend-quality.md](references/blend-quality.md).
+
+## Preserve geometry and editability
+
+Use document pixels. For crop `(x0,y0,Wc,Hc)` and generated `(Wg,Hg)`, map `x=x0+xg*Wc/Wg`, `y=y0+yg*Hc/Hg` only after verifying unchanged framing and alignment. Transform only the patch. Different aspect ratios require resolving reframing/padding, not blind stretching. A small object's detail budget is its pixels in the generated crop; whole-frame output dimensions are misleading.
+
+Keep generated content on named layers with reversible masks; separate cast shadows or transparent effects when needed. Preserve original hair, skin, texture and foreground occluders outside the intended insert. Match color, lighting, sharpness, grain and retouch locally rather than altering the entire photograph to fit the patch.
+
+## Accept and save
+
+1. Inspect a full view and native-scale close-up for seams, geometry and appearance. Correct the patch, mask or generation when needed.
+2. Audit the **visible composite**, not only the untouched original layer: local edits preserve decoded samples outside the allowed mask; expansion preserves the original rectangle at its translated offset. See [pixel-audit.md](references/pixel-audit.md) for an optional offline helper and its limits.
+3. Save a new `.pcraft`, export the requested format, read warnings and confirm layers/masks. Reopen a saved copy when claiming round-trip verification.
+4. Report actual dimensions, localized scope, visual/pixel checks, saved files and material limitations. Do not claim optical equivalence, restored real detail, supported bit depth or tested provider compatibility without evidence.
+
+Source attribution and version boundaries: [sources.md](references/sources.md).

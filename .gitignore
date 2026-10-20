@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+/DESIGN.md
+/docs/IMPLEMENTATION.md
