@@ -2,6 +2,10 @@
 
 Verified baseline: PhotoCraft 0.10.0 on macOS. Tool names may be prefixed `photocraft-live`, `photocraft`, or differently; use the host's actual inventory. Recheck the installed command registry and parameter documentation, especially on other releases/platforms.
 
+## Required transport
+
+Operate PhotoCraft through the connected MCP server only. Discover tools and make a read-only session/document inspection before mutations. If MCP is unavailable or a capability is missing, help restore/configure the connection and pause affected operations; do not fall back to direct CLI, raw HTTP/RPC, desktop automation or document-file rewriting. Commands and `control_call` routes below are invoked through MCP tools, not directly against the control endpoint. A CLI serving MCP is supported; invoking its editing API outside MCP is not. Standalone CLI tests in this repository are development probes, not an alternate user workflow.
+
 ## Live target and import
 
 Use the existing bridge for the visible app. Headless documents are different sessions. Inspect `ui_inspect` for session indices/document names/sizes and active layers. In live 0.10.0, `doc_select` and `doc_close` are unavailable. Discover/select a tab through `control_call` with method `ui.menu.invoke` and `params:{id:"window.document.<index>"}`; confirm the active document before dependent edits. Indices can change after opening/closing tabs.

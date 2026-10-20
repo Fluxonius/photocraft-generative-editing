@@ -28,7 +28,7 @@ After installation, invoke `$photocraft-generative-editing` in a host supporting
 
 ## Prerequisites
 
-- PhotoCraft and an existing supported MCP connection. To work in the visible app, use a **live bridge**; a headless session has different documents.
+- PhotoCraft and an existing supported MCP connection. **MCP is required for every PhotoCraft operation; direct CLI, raw HTTP/RPC and desktop automation are not fallback routes.** If unavailable, the agent helps connect MCP before editing. To work in the visible app, use a **live bridge**; a headless session has different documents.
 - An available image-editing generator. The skill documents built-in ChatGPT ImageGen and a general contract for other providers; it does not install or authenticate them.
 - Optional helper: Python 3.10+ and Pillow (`python -m pip install -r requirements.txt` in your chosen environment).
 

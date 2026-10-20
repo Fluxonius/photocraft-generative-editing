@@ -41,3 +41,9 @@ Without `PHOTOCRAFT_CLI`, the native integration case is skipped and16 helper ca
 - Other agents, image providers, Windows/Linux GUI behavior, later PhotoCraft versions, color-managed16/32-bit pipelines and native Photoshop PSD fidelity were not validated by these tests.
 - The helper is deliberately restricted to comparable8-bit L/LA/RGB/RGBA lossless PNG/TIFF exports up to64M pixels and refuses unsupported metadata/modes. Full scope is stated in the runtime pixel-audit reference.
 - Native projects were reopened and structurally inspected. Both reopened projects were exported again and their decoded channel samples matched their corresponding pre-reopen exports exactly in these synthetic cases. This is a tested round trip for these fixtures, not a general file-fidelity certification.
+
+## MCP transport requirement — v0.1.1
+
+A baseline instruction review found that “existing automation connection” did not explicitly exclude standalone CLI or desktop fallback when MCP was unavailable. The entry point and bridge reference now require MCP for PhotoCraft operations and live MCP for visible documents. Independent scenario review confirmed: missing MCP pauses editing; headless MCP cannot replace the intended live document; a CLI serving MCP is allowed through host MCP tools; external generation and offline crop/audit helpers remain allowed. These are instruction evaluations, not new live connection tests.
+
+After this documentation update, skill validation and `git diff --check` passed. The helper suite passed 16 tests; the optional native engine test was skipped in this run. The earlier recorded 17-test engine run remains unchanged.

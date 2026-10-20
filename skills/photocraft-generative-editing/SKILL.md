@@ -4,7 +4,13 @@ description: Use when adding, replacing or removing image content with AI in Pho
 ---
 # PhotoCraft generative editing
 
-Combine an available image generator with PhotoCraft's existing automation connection. Preserve the user's target document, requested live workflow and protected original pixels. This skill supplies a workflow, not a generator, MCP server or Photoshop feature implementation.
+Combine an available image generator with PhotoCraft through MCP. Preserve the user's target document, requested live workflow and protected original pixels. This skill supplies a workflow, not a generator, MCP server or Photoshop feature implementation.
+
+## Require PhotoCraft MCP
+
+Use a connected PhotoCraft MCP server for all PhotoCraft inspection, document edits, layer/mask operations, and saves/exports. First discover its tools and verify the intended session/document with a read-only inspection. Server names vary; use the actual inventory. For a document open in the visible app, require the live MCP bridge; headless MCP documents are separate sessions.
+
+If MCP is absent, disconnected, or lacks a required capability, pause the affected PhotoCraft operation, explain the missing prerequisite and help configure or reconnect MCP within the user's authorization. Verify the connection before resuming. Do not substitute direct CLI, raw HTTP/RPC, desktop clicks or file rewriting to control PhotoCraft outside MCP, even if faster or already authorized. A CLI launched as an MCP server is a valid transport when invoked through the host's MCP tools. External image generation and offline crop/pixel-audit helpers remain separate tools; they do not replace MCP for PhotoCraft operations.
 
 ## Establish the edit contract
 
